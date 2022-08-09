@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+    <title>DBMoney</title>
+</head>
+<body>
+  <div class="wraper">
+    <div class="sidebar">
+    	<h1 class="brand">DBM</h1>
+    	<div class="avatar">
+    	  <div class="user-pic"></div>
+    	  <div class="user-infos">
+    	    <p class="user-name"></p>
+    	    <p class="user-account">123456789-0</p>
+    	  </div>
+    	</div>
+	<a class="active" href="dashboard.html">
+	  <img src="../icons/dashboard.png" alt="Dashboard icon" class="icon-sidebar">
+	  Dashboard
+	</a>
+	<a href="deposito.html">  	
+  	  <img src="../icons/deposito.png" alt="Deposito icon" class="icon-sidebar">
+  	  Depósito
+  	</a>
+	  <a href="extrato.html">
+  	  <img src="../icons/extrato.png" alt="Extrato icon" class="icon-sidebar">
+  	  Extrato
+  	</a>
+	  <a href="pix.html">
+  	  <img src="../icons/pix.png" alt="Pix icon" class="icon-sidebar">
+  	  Pix
+  	</a>
+	  <a href="recarga.html">  	  
+  	  <img src="../icons/recarga.png" alt="Recarga icon" class="icon-sidebar">
+  	  Recarga
+  	</a>
+  	<a href="transferencia.html">
+  	  <img 
+  	    src="../icons/transferencia.png" alt="Transferencia icon" class="icon-sidebar">
+  	  Transferência
+  	</a>
+	
+  	<h3 class="section-sidebar">GERENCIAMENTO</h3>
+  	<a href="contaconfig.html">Configurações da Conta</a>
+  	<a href="sac.html">Atendimento ao Cliente</a>
+	<h3 class="section-sidebar"><a href="">SAIR</a></h3>
+    </div>
+
+    <div class="content">
+    	<div class="topbar-page">
+    	  <h3 class="title-page">Dashboard</h3>
+    	</div>
+        <div class="section-content">
+          <div class="saldo" style="margin-right: 40px;">
+            <p class="saldo-title">Saldo Disponível</p>
+            <p class="saldo-content">R$2.000,00</p>
+          </div>
+          <div class="saldo">
+            <p class="saldo-title">Fatura Atual</p>
+            <p class="saldo-content">R$1.000,00</p>
+          </div>
+        </div>
+		
+		<div class="options" style="padding: 10px 0px 10px 10px; margin-left: 100px;">
+			<button type="submit" class="btn-padrao" id="btn-fatura">Pagar fatura</button>
+		</div>
+
+        <div class="section-content">
+			<div class="report"><p>Dependentes</p>  
+			<div class="row dep-info">
+			<div class="column">Ana Carla Souza</div>
+			<div class="column">R$ 1000</div>
+			</div> 
+
+			<div class="row dep-info">
+				<div class="column">Pedro Paulo</div>
+				<div class="column">R$ 2500</div>
+				</div> 
+		</div>  
+	</div>
+		
+		<div class="options" style="padding: 10px 0px 10px 10px; margin-left: 100px;">
+			<button type="submit" class="btn-padrao" id="btn-novodep"><a href="criardep.html" id="a-novodep">Novo dependente</a></button>
+		</div>
+
+        
+        <div class="section-content">
+          <div class="report">
+            <p>Últimos 30 dias</p>
+            <div class="items-report">
+            </div>
+          </div>          
+        </div>
+    </div> 
+  </div> 
+<script defer src="../app/authentication.js"></script>
+<script defer src="../app/displayInfos.js"></script>    
+</body>
+</html>

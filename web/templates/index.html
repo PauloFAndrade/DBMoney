@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\css\LoginStyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+    <title>DBMoney</title>
+</head>
+<body>
+    <div class="login-box">
+        <h3>Bem-vindo!</h3>
+        <form action="POST">
+            <input type="text" name="cpf" placeholder="CPF" required>
+            <input type="password" name="senha" id="password" placeholder="Senha" required>
+            <a href="#" id="forgot-password">Esqueceu as credenciais?</a>
+            <div class="remember-acess">
+                <input type="checkbox" id="remember-acess" name="remember-acess" >
+                <label for="remember-acess" id="remember-acess-lb">Salvar credenciais</label>
+            </div>
+            <input type="submit" value="Acessar">
+            <a href="cadastro.html" id="register">Ainda não possui uma conta? Registre-se.</a>
+        </form>
+    </div>
+<script defer src="../app/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+@import url(https://fonts.googleapis.com/css?family=Comfortaa);
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Comfortaa;
+    border: none;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+body{
+    background-color: #343A40;
+}
+
+a{
+    font-size: .6rem;
+    text-decoration: none;
+    color: #8B8C89;
+}
+
+a:hover{
+    color: #70E000;
+}
+
+label{
+    color: #8B8C89;
+    font-size: .6rem;
+}
+
+#version{
+    color: white;
+    text-align: left;
+}
+
+h3{
+    padding-top: 20px;
+    color: #70E000;
+    text-align: left;
+}
+
+.login-box{
+    background-color: #000000;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.wrapper{
+    background-color: #000000;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 30px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    border-radius: 20px;
+    text-align: center;
+    width: max-content;
+}
+
+form{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+textarea, select, label, input{
+    display: block;
+    width: 100%;
+}
+
+textarea, select, input{
+    border-radius: 5px;
+    padding: 10px;
+    /*margin-bottom: 25px;*/
+}
+
+#password{
+    margin-top: 25px
+}
+
+/*#remember-acess-lb{
+    text-align: left;
+}
+*/
+
+input[type="submit"] {
+    text-align: center;
+    color: white;
+    background-color: #70E000;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#cadastrar-btn {
+    width: 30%;
+    margin-left: 35%;
+}
+
+input[type="submit"]:hover {
+    text-align: center;
+    color: white;
+    background-color: #38b000;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#cadastrar-btn:hover {
+    background-color: #38b000;
+    width: 30%;
+    margin-left: 35%;
+}
+
+#remember-acess{
+    width: 20px;
+    display: inline;
+    vertical-align: middle;
+}
+
+#remember-acess-lb{
+    display: inline;
+    vertical-align:middle;
+}
+
+.remember-acess{
+    padding-top: 20px;
+    text-align: left;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.column {
+    flex: 25%;
+    padding: 20px;
+    width: 400px;
+}
+
+@media screen and (max-width: 992px) {
+    .column {
+        flex: 50%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .row {
+        flex-direction: column;
+    }
+}
