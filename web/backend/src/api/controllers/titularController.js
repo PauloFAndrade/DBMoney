@@ -9,11 +9,12 @@ const dependentService = require('../../services/dependentService')
 const dependentController = require('./dependentController')
 const ChavePixService = require('../../services/chavePixService')
 
+const Bcrypt = require('../../utils/bcrypt')
+
 class TitularController {
     async create_Titular(request, response) {
         try {
             const titularReceived = request.body;
-
             //Criando o Cliente
             await UserService.insertUser(titularReceived);
             const userCreatedId = await UserService.getUserIdByCPF(titularReceived.cliente_cpf);
@@ -42,10 +43,11 @@ class TitularController {
             //Criando um Cartao Débito
             await CartaoDebitoService.insertCartaoDebito(newCartao.cartao_num_cartao);
 
-            response.status(200).json({
+            return response.status(200).json({
                 msg: "Titular inserido com sucesso"
             })
         } catch (error) {
+            console.log("\nPEGOU ERRO\n")
             console.log(error);
             return response.status(400).json({
                 error: error

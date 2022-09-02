@@ -1,4 +1,6 @@
+
 window.addEventListener('load', isLoggedIn());
+
 function isLoggedIn() {
     let idClient = sessionStorage.getItem('cliente_id');
     if(idClient) {

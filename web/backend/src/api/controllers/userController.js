@@ -3,6 +3,9 @@ const ChavePixService = require('../../services/chavePixService')
 
 class UserController {
     async create_user(request, response) {
+        mysql.getConnection((err,conn) => {
+            
+        })
         const userReceived = request.body
         try {
             await UserService.insertUser(userReceived)

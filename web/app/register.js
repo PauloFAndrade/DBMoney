@@ -1,4 +1,6 @@
+
 let form = document.querySelector("form");
+
 function handleSubmitForm(event) {
     event.preventDefault();
     let elements = form.elements;

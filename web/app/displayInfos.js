@@ -8,12 +8,12 @@ function getClientInfos() {
         request.send();
         request.onload  = function() {
             if (this.status == 200) {
-
                 console.log(request.response)
                 let responseData = JSON.parse(request.response);
                 sessionStorage.setItem('titular_cod_conta', responseData.titular_cod_conta);
                 getBalanceAccount();
-                getLimitCreditCard();
+                //getLimitCreditCard();
+                getBillCreditCard();
             } 
         };
     }
@@ -49,5 +49,20 @@ function getLimitCreditCard() {
                 // balance_content.innerHTML = `R$${responseData.conta_saldo}`;
             } 
         };
+    }
+}
+
+function getBillCreditCard(){
+    let idClient = sessionStorage.getItem('cliente_id');
+    if(idClient){
+        let request = new XMLHttpRequest();
+        request.open('GET', `http://localhost:3000/cartaocredito/getFatura/${idClient}`, true);
+        request.send();
+        request.onload = function(){
+            if(this.status = 200){
+                let responseData = JSON.parse(request.response);
+                console.log(responseData);
+            }
+        }
     }
 }

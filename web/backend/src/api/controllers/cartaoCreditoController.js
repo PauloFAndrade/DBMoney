@@ -21,14 +21,18 @@ class CartaoCreditoController {
     async getFatura(request,response){
         const id = request.params.id
         try {
+            console.log("1")
             const cartao = await CartaoService.getCartaoByTitularId2(id);
-            console.log(cartao)
+            console.log("2")
+            //console.log(cartao)
             const cartaoCredito = await CartaoCreditoService.getCartaoCreditoByNumCartao(cartao.cartao_num_cartao)
+            console.log("3")
             const fatura = cartaoCredito.cartaocredito_fatura
+            console.log("4")
             return response.status(200).json(fatura)
         } catch (error) {
             return response.status(400).json({
-                error: error
+                error: "error"
             })
         }
     }
