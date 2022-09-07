@@ -19,6 +19,7 @@ class CartaoCreditoService{
             const database = await DbConnection();
             const [result] = await database.query('select * from CartaoCredito where cartaocredito_num_cartao = ?',num_cartao)
             if(result.length > 0){
+                console.log("Valor da Fatura ->" + result[0].cartaocredito_fatura);
                 return result[0];
             }
         } catch (error) {

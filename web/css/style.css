@@ -126,7 +126,7 @@ div.content {
   padding: 20px 107px;
 }
 
-.saldo {
+.saldo, .fatura{
   background: #FFFFFF;
   border-radius: 5px;
   padding: 44px 50px;
@@ -134,11 +134,11 @@ div.content {
   max-width: 393.65px;
 }
 
-.saldo-title {
+.saldo-title, .fatura-title {
   margin-bottom: 18px;
 }
 
-.saldo-content {
+.saldo-content, .fatura-content{
   font-size: 50px;
   font-weight: bold;
   color: #8B8C89;
@@ -190,12 +190,12 @@ div.content {
   .section-content {
     display: block;
   }
-  .saldo, .default-card, .black-card, .report {
+  .saldo, .default-card, .black-card, .report , .fatura{
     margin-top: 30px;
     width: 300px;
     padding: 44px 20px;
   }
-  .saldo-content {
+  .saldo-content, .fatura-content{
     font-size: 34px;
   }
 }
