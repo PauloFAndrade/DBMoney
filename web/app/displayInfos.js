@@ -1,5 +1,7 @@
 window.addEventListener('load', getClientInfos());
 
+//autoUpdate();
+
 function getClientInfos() { 
     let idClient = sessionStorage.getItem('cliente_id');
     if(idClient) {
@@ -8,13 +10,11 @@ function getClientInfos() {
         request.send();
         request.onload  = function() {
             if (this.status == 200) {
-                console.log(request.response)
+                //console.log(request.response)
                 let responseData = JSON.parse(request.response);
                 sessionStorage.setItem('titular_cod_conta', responseData.titular_cod_conta);
                 getBalanceAccount();
-                console.log("Antes do GetFatura()");
                 getFaturaCreditCard();
-                console.log("Depois do GetFatura()");
                 //getBillCreditCard();
             } 
         };
@@ -31,7 +31,7 @@ function formatPrice(price){
 
 function getBalanceAccount() {
     let clientAccount = sessionStorage.getItem('titular_cod_conta');
-    console.log("TitularCodConta -> " + clientAccount);
+    //console.log("TitularCodConta -> " + clientAccount);
     if(clientAccount) {
         let request = new XMLHttpRequest();
         request.open('GET', `http://localhost:3000/conta/${clientAccount}`, true);
@@ -57,7 +57,7 @@ function getFaturaCreditCard() {
                 let responseData = JSON.parse(request.response);
                 let balance_content = document.querySelector('.fatura-content');
                 balance_content.innerHTML = formatPrice(responseData);
-                console.log("Valor da fatura -> " + responseData);
+                //console.log("Valor da fatura -> " + responseData);
             } 
         };
     }
@@ -72,7 +72,7 @@ function getBillCreditCard(){
         request.onload = function(){
             if(this.status = 200){
                 let responseData = JSON.parse(request.response);
-                console.log(responseData);
+                //console.log(responseData);
             }
         }
     }

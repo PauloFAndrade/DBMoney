@@ -42,7 +42,9 @@ class CartaoCreditoController {
             const saldoConta = parseInt(await ContaService.getSaldo(codConta));
             const saldoSuficiente = await CartaoCreditoService.pagarFatura(cartao.cartao_num_cartao,saldoConta);
             console.log("SALDO -> " + saldoSuficiente)
-            if(saldoSuficiente == false){
+            if(await CartaoCreditoService.getFatura(cartao.cartao_num_cartao) == 0){
+                throw "Fatura Zerada"
+            }else if(saldoSuficiente == false){
                 throw "Saldo Insuficiente na Conta"
             }else if(saldoSuficiente == true){
                 await ContaService.removeSaldo(codConta,await CartaoCreditoService.getFatura(cartao.cartao_num_cartao));

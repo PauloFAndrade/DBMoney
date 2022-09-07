@@ -3,10 +3,10 @@ function validate_boleto() {
     if(!isNaN(val) && parseInt(val, 10) > 0) { 
         alert("Boleto para depósito gerado com sucesso!");
         download_boleto(val);
-        let idClient = sessionStorage.getItem('cliente_id');
-        if(idClient) {
+        let codConta = sessionStorage.getItem('titular_cod_conta');
+        if(codConta) {
             let request = new XMLHttpRequest();
-            request.open('GET', `http://localhost:3000/conta/${idClient}/${val}`);
+            request.open('GET', `http://localhost:3000/conta/${codConta}/${val}`);
             request.send();
             request.onload  = function() {
                 if (this.status == 200) {

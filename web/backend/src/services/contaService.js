@@ -62,12 +62,15 @@ class ContaService {
     }
     async addSaldo(contaCodigo,valor){
         try {
+            console.log("AddSaldo Start With contaCodigo ->" + contaCodigo +" And Valor -> " + valor);
             const database = await DbConnection();
             const values = [valor,contaCodigo];
             await database.query('UPDATE Conta SET conta_saldo = conta_saldo + ? where conta_codigo = ?',values);
+            console.log("AddSaldo Após Update");
         } catch (error) {
             console.log(error);
-            return error;
+            throw new Error("Erro ao Adicionar Saldo: "+error);
+            //return error;
         }
     }
     async removeSaldo(contaCodigo,valor){
