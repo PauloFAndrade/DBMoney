@@ -42,7 +42,20 @@ function generate_boleto() {
 }
 
 function confirm_recarga() {
-    alert("Recarga em processo!");
+    let form = document.querySelector('.form-recarga');
+    let idClient = sessionStorage.getItem('cliente_id');
+    if(idClient) {
+        let request = new XMLHttpRequest();
+        request.open('POST', `http://localhost:3000/recarga`);
+        request.send();
+        request.onload  = function() {
+            if (this.status == 200) {
+                let responseData = JSON.parse(request.response);
+                console.log(responseData);
+            } 
+        };
+    }
+    //alert("Recarga em processo!");
 }
 
 function confirm_pix() {

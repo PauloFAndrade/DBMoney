@@ -56,8 +56,7 @@
     	<div class="topbar-page">
     	  <h3 class="title-page">Recarga</h3>
     	</div>
-        
-		<form class="form-recarga" onsubmit="confirm_recarga()">
+		<form class="form-recarga" action="POST">
 			<div class="common-field-title">Número (apenas dígitos)</div>
 			<div class="field-input"><input type="tel" pattern="[1-9]{2}9[0-9]{4}[0-9]{4}" name="tel" id="valor-boleto" placeholder="(DDD) + Número" required></div>
 			
@@ -71,12 +70,12 @@
 
 			<div class="common-field-title">Valor</div>
 			<select class="field-input" name="valor" required>
-				<option value="r10">R$ 10</option>
-				<option value="r15">R$ 15</option>
-				<option value="r20">R$ 20</option>
-				<option value="r30">R$ 30</option>
-				<option value="r50">R$ 50</option>
-				<option value="r100">R$ 100</option>
+				<option value="10">R$ 10</option>
+				<option value="15">R$ 15</option>
+				<option value="20">R$ 20</option>
+				<option value="30">R$ 30</option>
+				<option value="50">R$ 50</option>
+				<option value="100">R$ 100</option>
 			</select>
 
 			<div class="common-field-title">Método de pagamento</div>
@@ -94,5 +93,7 @@
     </div> 
   </div> 
 <script defer src="../app/authentication.js"></script>        
+<script defer src="../app/recarga.js"></script>        
+
 </body>
 </html>

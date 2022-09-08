@@ -8,8 +8,9 @@ class RecargaService{
             await database.query('insert into Recarga (recarga_operacao_id,recarga_operadora,recarga_num_telefone)'
             +' values (?,?,?)',values);
         } catch (error) {
-            console.log(error);
-            return error;
+            //console.log(error);
+            //return error;
+            throw new Error("Erro ao Inserir Usuário\n"+error);
         }
     }
 }
