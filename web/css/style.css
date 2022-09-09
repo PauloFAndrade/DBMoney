@@ -131,7 +131,8 @@ div.content {
   border-radius: 5px;
   padding: 44px 50px;
   margin: auto 0;
-  max-width: 393.65px;
+  width: 355px;
+  /*max-width: 393.65px;*/
 }
 
 .saldo-title, .fatura-title {

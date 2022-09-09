@@ -6,10 +6,13 @@ class OperacaoService{
             const database = await DbConnection();
             operacaoReceived.codigo = await this.randomNumber();
             console.log("The Random Code Operation is -> " + operacaoReceived.codigo);
-            const values = [operacaoReceived.codigo,''+((new Date().getFullYear()))+'-'+new Date().getMonth()+'-'+new Date().getDay(),operacaoReceived.valor];
+            console.log("Data -> " + new Date().getFullYear()+'-'+((new Date().getMonth())+1)+'-'+new Date().getDate());
+            const values = [operacaoReceived.codigo,''+((new Date().getFullYear()))+'-'+((new Date().getMonth())+1)+'-'+new Date().getDate(),operacaoReceived.valor];
             let idOperacao = await database.query('insert into Operacao (operacao_codigo,operacao_data,operacao_valor) values (?,?,?)',values);
             console.log("IdOperacao -> " + idOperacao[0].insertId);
-            return idOperacao[0].insertId;
+            let dataOperation = { idOperacao: '' , valorOperacao: ''};
+            return dataOperation = { idOperacao: idOperacao[0].insertId, valorOperacao: operacaoReceived.valor };
+            //return idOperacao[0].insertId;
         } catch (error) {
             console.log(error);
             return error;

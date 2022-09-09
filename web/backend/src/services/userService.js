@@ -11,7 +11,7 @@ class UserService {
                 'cliente_senha, cliente_id_gerente) VALUES (?,?,?,?,?,?,?,?);'
             const values = [userReceived.cliente_nome, userReceived.cliente_email,userReceived.cliente_telefone, userReceived.cliente_cpf, 
                 userReceived.cliente_endereco, userReceived.cliente_data_nascimento, 
-                passwordEncrypted, 1]
+                passwordEncrypted, 2]
             await database.query(insertQuery, values);
         } catch (error) {
             throw new Error("Erro ao Inserir Usuário\n"+error);

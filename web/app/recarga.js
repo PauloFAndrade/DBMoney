@@ -6,18 +6,19 @@ function handleSubmitForm(event) {
     let elements = form.elements;
     let payload = buildPayload(elements);
     let request = new XMLHttpRequest();
-    request.open('POST', 'http://localhost:3000/titular');
+    request.open('POST', 'http://localhost:3000/recarga');
     request.setRequestHeader('Content-Type', 'application/json');
     request.onload  = function() {
         if (this.status == 200) {
-            let sucessMessage = "Cadastro realizado com sucesso!";
+            let sucessMessage = "Recarga realizada com sucesso!";
             alert(sucessMessage);
-            document.location.href = 'index.html';
+            //document.location.href = 'recarga.html';
         } else {
-            let message = "Cadastro não foi realizado com sucesso." + 
+            let responseData = JSON.parse(request.response);
+            let message = "Recarga não foi realizada com sucesso." + 
                 "\n Tente novamente!";
             if (message) {
-                alert(message);
+                alert(message + " ["+responseData.error+"]");
             }
             form.reset();
         }
@@ -33,8 +34,12 @@ function buildPayload(elements) {
             payload[elements[i].name] = elements[i].value;
         }
     }
+    let codConta = sessionStorage.getItem('titular_cod_conta')
+    if(codConta){
+        payload['codConta'] = codConta;
+    }
     let payloadString = JSON.stringify(payload);
-    console.log(payloadString);
+    console.log("Payload String -> " + payloadString);
     return payloadString;
 }
 form.addEventListener('submit', event => handleSubmitForm(event));

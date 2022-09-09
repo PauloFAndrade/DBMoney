@@ -41,6 +41,23 @@ class CartaoController {
             })
         }
     }
+
+    async show_cartao_titular(request,response){
+        console.log("Teste1")
+        const { idTitular } = request.params
+        console.log("Teste2")
+        console.log(idTitular);
+        try {
+            const cartao = await CartaoService.getCartaoByTitularId2(idTitular)
+            return response.status(200).json({
+                cartao: cartao
+            })
+        } catch (error) {
+            return response.status(400).json({
+                error: error
+            })
+        }
+    }
 }
 
 module.exports = new CartaoController() 
